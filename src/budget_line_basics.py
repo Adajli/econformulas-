@@ -31,7 +31,7 @@ class BudgetLinebasics:
         elif bpbX<bpbY:
             print("Choose more of good Y (higher bang per buck ratio)")
         else:
-            print("This is the optial bundle")
+            print("This is the optimal consumer bundle")
 
         
 budget = BudgetLinebasics(20,20)
