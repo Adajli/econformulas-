@@ -1,5 +1,5 @@
 # econformulas
-This is a python project for basic economic calculations including opportunity cost, comparative advantage, and... This project provides easy-to-use classes to explore college level economic concepts programmatically.The package will gather all the tools and methods into a single library making it easier to quickly compute standard economic quantities.
+This is a python project for basic economic calculations including opportunity cost, comparative advantage, and budget line basics. This project provides easy-to-use classes to explore college level economic concepts programmatically.The package will gather all the tools and methods into a single library making it easier to quickly compute standard economic quantities.
 ## Functionality
 The package can be used by professors to generate examples and demonstrations to be used during lectures.
 Students studying principle economics courses may also use the package to check their understanding and improve their efficiency in tests.
@@ -64,6 +64,33 @@ print("Predicted Quantity Change:", quantity_change)
 
 income_effect = ds.shift_due_to_income(10, 0.2)
 print("Shift due to income:", income_effect)
+```
+### 3.class BudgetLinebasics:
+Calculate budget line in formulas.
+#### Attributes:
+*priceX*: Price for good X 
+
+*priceY*: Price for good Y 
+
+#### Methods:
+*calculateIncome(self,MU_X,MU_Y)*: Computes income.
+
+*printIncome(self,X,Y)*: Prints income.
+
+*checkBudget(self,cost,X,Y)*: Checks whether or not what one spends is within the budget.
+
+*calculateBangPerBuck(self,MU):*: Determines bang per buck
+
+*printBudgetline(self)*: Prints budget line.
+
+#### Usage:
+```from econformulas import BudgetLinebasics
+
+budget = BudgetLinebasics(20,20)
+budget.calculateIncome(10,10)
+budget.printIncome(10,10)
+budget.printBudgetline()
+budget.checkBudget(600,10,10)
 ```
 #### License
 This project is open-source and free to use under the MIT License
