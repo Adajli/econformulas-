@@ -2,9 +2,9 @@ import numpy as np
 
 class DemandSupplyShifts:
     def __init__(self, elasticity_d=None, elasticity_s=None):
-        # demand elasticity
+        # defines the attribute demand elasticity
         self.elasticity_d = elasticity_d  
-        # supply elasticity
+        # defines the attribute supply elasticity
         self.elasticity_s = elasticity_s 
 
         if elasticity_d is not None and (not isinstance(elasticity_d, (int, float)) or np.isnan(elasticity_d)):
@@ -14,7 +14,8 @@ class DemandSupplyShifts:
     def calculate_elasticity(self, percent_change_quantity, percent_change_price):
         """
         Elasticity = %ΔQ / %ΔP
-        Values as raed from graph
+        Values as read from graph
+        Calculates and returns elasticity 
         """
         pcq = np.array(percent_change_quantity)
         pcp = np.array(percent_change_price)
@@ -30,6 +31,7 @@ class DemandSupplyShifts:
         """
         Predict %ΔQ using elasticity × %ΔP
         User may pass elasticity directly OR rely on stored elasticity
+        Returns predicted percentage change in quantity due to percentage change in price given
         """
         price_change = np.array(percent_change_price)
 
@@ -49,6 +51,10 @@ class DemandSupplyShifts:
         return elasticity * price_change
     
     def classify_elasticity(self, elasticity_value):
+        """
+        Takes in elasticty value and converts it to a float
+        Conducts tests to deliberate the type of elasticity and returns this identity
+        """
         e = float(elasticity_value)
         if e > 1:
             return "elastic"
@@ -57,7 +63,8 @@ class DemandSupplyShifts:
         else:
             return "inelastic"
 
-model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 'three')  
+model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 'three'
+                           )  
 elasticity = model.calculate_elasticity(8,2) 
 print("Calculated elasticity:", elasticity)
 prediction_demand = model.predict_quantity_change(3.6, market="demand")

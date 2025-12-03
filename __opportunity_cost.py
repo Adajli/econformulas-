@@ -1,37 +1,49 @@
 import numpy as np
 class OpportunityCost:
     def __init__(self, time_value=None, default_units="dollars"):
-    # time_value : value of one hour of time (float)
-    # default_units : label for the cost units (str) 
+        """ 
+        time_value : value of one hour of time (float)
+        default_units : label for the cost units (str)
+        """ 
         if not isinstance(time_value, (float)):
-            raise ValueError("time_A must be a number")
+            raise ValueError("time_value must be a number")
         self.time_value = time_value
         self.default_units = default_units
     def cost_of_time(self,hours):
-    # Calculates opportunity cost of hours 
+        """
+        Checks that hours is a number 
+        Multiplies value of hours with time_value defined above
+        Returns thi value as the opportunity cost 
+        
+        """
         if not isinstance(hours, (int, float)):
             raise ValueError("hours must be a number")
        
         self.cost = np.array(hours) * self.time_value
         return self.cost
     def compare_alternatives(self, value_A, value_B):
-    #Compares opportunity costs of two alternatives
-    #value_A: the benefit/value you get from choosing A
-    #value_B: the benefit/value you get from choosing B
+        """
+        Compares opportunity costs of two alternatives
+        value_A: the benefit/value you get from choosing A
+        value_B: the benefit/value you get from choosing B
+        """
         if not isinstance(value_A, (int, float)):
             raise ValueError("value_A must be a number")
         if not isinstance(value_B, (int, float)):
             raise ValueError("value_B must be a number")
-    #Returns:
-    #   choose_A_cost = what you give up (value of B)
-    #   choose_B_cost = what you give up (value of A) 
+        """
+        Returns:
+        choose_A_cost = what you give up (value of B)
+        choose_B_cost = what you give up (value of A) 
+        """
         self.cost_of_A = value_B
         self.cost_of_B = value_A
         return self.cost_of_A,self.cost_of_B
     
     def comparative_advantage(self, time_A, time_B):
-    #Compares comparative advantage of two values
-    #Lower opportunity cost = comparative advantage
+        """Compares opportunity cost of two values and checks which value has the comparative advantage
+        Lower opportunity cost = comparative advantage
+        """
         if not isinstance(time_A, (int, float)):
             raise ValueError("time_A must be a number")
         if not isinstance(time_B, (int, float)):
