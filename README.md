@@ -65,7 +65,7 @@ print("Predicted Quantity Change:", quantity_change)
 income_effect = ds.shift_due_to_income(10, 0.2)
 print("Shift due to income:", income_effect)
 ```
-### 3.class BudgetLinebasics:
+### 3.BudgetLinebasics:
 Calculate budget line in formulas.
 #### Attributes:
 *priceX*: Price for good X 
