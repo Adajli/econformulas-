@@ -13,7 +13,7 @@ class OpportunityCost:
         """
         Checks that hours is a number 
         Multiplies value of hours with time_value defined above
-        Returns thi value as the opportunity cost 
+        Returns this value as the opportunity cost 
         
         """
         if not isinstance(hours, (int, float)):
@@ -58,12 +58,14 @@ class OpportunityCost:
             return f"B has comparative advantage (OC={self.OC_B:.3f})"
         else:
             return "Neither has a comparative advantage (opportunity costs are equal)"
-        
-opp_cost = OpportunityCost(45)
-opp_cost.cost_of_time(five)
-print(opp_cost.cost)
-opp_cost.compare_alternatives(10,14)
-print(opp_cost.cost_of_A,opp_cost.cost_of_B)
-print(opp_cost.comparative_advantage(5,8))
 
+if __name__ == "__main__":
+          
+    opp_cost = OpportunityCost(45)
+    print(opp_cost.cost)
+    opp_cost.compare_alternatives(10,14)
+    print(opp_cost.cost_of_A,opp_cost.cost_of_B)
+    print(len(opp_cost.cost_of_A,opp_cost.cost_of_B))
+    print(opp_cost.comparative_advantage(5,8))
+    
 
