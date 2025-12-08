@@ -38,9 +38,9 @@ class DemandSupplyShifts:
         # If elasticity not passed, use stored elasticity
         if elasticity is None:
             if market == "demand":
-                elasticity = self.elasticity_d
+                elasticity = float(self.elasticity_d)
             elif market == "supply":
-                elasticity = self.elasticity_s
+                elasticity = float(self.elasticity_s)
             else:
                 raise ValueError("market must be 'demand' or 'supply'")
 
@@ -62,14 +62,17 @@ class DemandSupplyShifts:
             return "unit elastic"
         else:
             return "inelastic"
+        
+if __name__ == "__main__":
 
-model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 'three'
+    model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 'three'
                            )  
-elasticity = model.calculate_elasticity(8,2) 
-print("Calculated elasticity:", elasticity)
-prediction_demand = model.predict_quantity_change(3.6, market="demand")
-print("Predicted %ΔQ (demand):", prediction_demand)
-prediction_supply = model.predict_quantity_change(5.2, market="supply")
-print("Predicted %ΔQ (supply):", prediction_supply)
-elasticity_type = model.classify_elasticity(elasticity)
-print(f" {elasticity} is {elasticity_type}")
+    elasticity = model.calculate_elasticity(8,2) 
+    print("Calculated elasticity:", elasticity)
+    prediction_demand = model.predict_quantity_change(3.6, market="demand")
+    print("Predicted %ΔQ (demand):", prediction_demand)
+    prediction_supply = model.predict_quantity_change(5.2, market="supply")
+    print("Predicted %ΔQ (supply):", prediction_supply)
+    elasticity_type = model.classify_elasticity(elasticity)
+    print(f" {elasticity} is {elasticity_type}")
+
