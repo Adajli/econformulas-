@@ -79,7 +79,7 @@ Calculate budget line in formulas.
 
 *checkBudget(self,cost,X,Y)*: Checks whether or not what one spends is within the budget.
 
-*calculateBangPerBuck(self,MU):*: Determines bang per buck
+*calculateBangPerBuck(self,MU)*: Determines bang per buck
 
 *printBudgetline(self)*: Prints budget line.
 
