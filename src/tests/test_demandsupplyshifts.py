@@ -1,6 +1,6 @@
-#import pytest
 import numpy as np
 from demandsupplyshifts import DemandSupplyShifts
+
 def test_calculate_elasticity_correct_output():
     model = DemandSupplyShifts()
     result = model.calculate_elasticity(8, 2)
