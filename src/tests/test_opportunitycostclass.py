@@ -7,11 +7,11 @@ def test_cost_of_time():
     assert output == 75 #15*5 = 75
 
 def test_compare_alternatives():
-    model = OpportunityCost()
+    model = OpportunityCost(15)
     output = model.compare_alternatives(10,5)
-    assert len(output) == 2
+    assert output == (5,10) 
 
 def  test_comparative_advantage():
-    model = OpportunityCost
-    output = model.comparative_advantage
-    assert 
+    model = OpportunityCost(15)
+    output = model.comparative_advantage(5,10)
+    assert output == "A has comparative advantage (OC=0.500)"
