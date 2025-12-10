@@ -1,5 +1,5 @@
 import numpy as np
-from opoortunitycost import OpportunityCost
+from ..opportunitycost import OpportunityCost
 
 def test_cost_of_time():
     model = OpportunityCost(15)
