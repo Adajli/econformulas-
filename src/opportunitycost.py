@@ -1,11 +1,12 @@
 import numpy as np
+
 class OpportunityCost:
     def __init__(self, time_value=None, default_units="dollars"):
         """ 
         time_value : value of one hour of time (float)
         default_units : label for the cost units (str)
         """ 
-        if not isinstance(time_value, (float)):
+        if not isinstance(time_value, (int,float)):
             raise ValueError("time_value must be a number")
         self.time_value = time_value
         self.default_units = default_units
@@ -61,11 +62,11 @@ class OpportunityCost:
 
 if __name__ == "__main__":
           
-    opp_cost = OpportunityCost(45)
-    print(opp_cost.cost)
-    opp_cost.compare_alternatives(10,14)
-    print(opp_cost.cost_of_A,opp_cost.cost_of_B)
-    print(len(opp_cost.cost_of_A,opp_cost.cost_of_B))
+    opp_cost = OpportunityCost(15)
+    print("Cost of 3 hours:", opp_cost.cost_of_time(3))
+    A_cost, B_cost = opp_cost.compare_alternatives(10,14)
+    print("Cost of choosing A:", A_cost)
+    print("Cost of choosing B:", B_cost)    
     print(opp_cost.comparative_advantage(5,8))
     
 
