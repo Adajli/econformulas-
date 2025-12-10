@@ -1,5 +1,5 @@
 import numpy as np
-from demandsupplyshifts import DemandSupplyShifts
+from ..demandsupplyshifts import DemandSupplyShifts
 
 def test_calculate_elasticity_correct_output():
     model = DemandSupplyShifts()
