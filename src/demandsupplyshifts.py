@@ -65,8 +65,7 @@ class DemandSupplyShifts:
         
 if __name__ == "__main__":
 
-    model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 'three'
-                           )  
+    model = DemandSupplyShifts(elasticity_d= 5,elasticity_s= 3)  
     elasticity = model.calculate_elasticity(8,2) 
     print("Calculated elasticity:", elasticity)
     prediction_demand = model.predict_quantity_change(3.6, market="demand")
