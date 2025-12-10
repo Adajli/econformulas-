@@ -70,8 +70,9 @@ class BudgetLinebasics:
             print("This is the optimal consumer bundle")
 
         
-budget = BudgetLinebasics(20,20)
-budget.calculateIncome(10,10) # Calculates income of 400
+budget = BudgetLinebasics(20,20) # Set up for a budget line.
+budget.calculateIncome(10,10) # Calculates income, which results in 400
 budget.printIncome(10,10) #Prints income as a result
-budget.printBudgetline() # 20X + 20Y = Income
-budget.checkBudget(600,10,10) # says that "You can not spend the money on your income"
+budget.printBudgetline() # Prints Budget line: 20X + 20Y = Income
+budget.calculateBangPerBuck(10) # Prints "This is the optimal consumer bundle"
+budget.checkBudget(600,10,10) # Prints "You can not spend the money on your income"
