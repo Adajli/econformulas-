@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: econformulas
+Version: 0.0.1
+Summary: A package.
+Author-email: Ada Li <ajli@smith.edu>, Zoey Ochieng <zochieng@smith.edu>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/Adajli/econformulas-/tree/main
+Project-URL: Issues, https://github.com/Adajli/econformulas-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # econformulas
 This is a python project for basic economic calculations including opportunity cost, comparative advantage, and budget line basics. This project provides easy-to-use classes to explore college level economic concepts programmatically.The package will gather all the tools and methods into a single library making it easier to quickly compute standard economic quantities.
 ## Functionality
@@ -79,7 +94,7 @@ Calculate budget line in formulas.
 
 *checkBudget(self,cost,X,Y)*: Checks whether or not what one spends is within the budget.
 
-*calculateBangPerBuck(self,MU)*: Determines bang per buck
+*calculateBangPerBuck(self,MU):*: Determines bang per buck
 
 *printBudgetline(self)*: Prints budget line.
 
